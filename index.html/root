@@ -308,7 +308,7 @@
 
   <script>
     // ======= CONFIG (swap this with your Make.com webhook) =======
-    const MAKE_WEBHOOK_URL = 'https://hook.make.com/REPLACE_WITH_YOURS'; // <-- put your Make webhook URL here
+    const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/yexowj2rinh5uw7nmx3u5p8s3wgljmjy'; // <-- put your Make webhook URL here
     // ============================================================
 
     // Basic UI helpers
@@ -373,7 +373,7 @@
 
     // POST to Make.com webhook
     async function postToMake(payload){
-      if(!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('https://hook.us2.make.com/i8skkg44ybq6vptrr1bblxuks1j63vti')){
+      if(!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('https://'hook.us2.make.com/yexowj2rinh5uw7nmx3u5p8s3wgljmjy')){
         console.warn('Make webhook not configured.');
         throw new Error('Webhook not configured');
       }
