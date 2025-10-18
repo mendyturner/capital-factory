@@ -373,7 +373,7 @@
 
     // POST to Make.com webhook
     async function postToMake(payload){
-      if(!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('REPLACE_WITH_YOURS')){
+      if(!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('https://hook.us2.make.com/i8skkg44ybq6vptrr1bblxuks1j63vti')){
         console.warn('Make webhook not configured.');
         throw new Error('Webhook not configured');
       }
