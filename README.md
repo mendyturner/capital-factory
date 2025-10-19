@@ -308,7 +308,7 @@
 
   <script>
     // ======= CONFIG (swap this with your Make.com webhook) =======
-    const MAKE_WEBHOOK_URL = 'https://hook.make.com/REPLACE_WITH_YOURS'; // <-- put your Make webhook URL here
+    const MAKE_WEBHOOK_URL = 'https://hook.make.com/hook.us2.make.com/yexowj2rinh5uw7nmx3u5p8s3wgljmjy'; // <-- put your Make webhook URL here
     // ============================================================
 
     // Basic UI helpers
