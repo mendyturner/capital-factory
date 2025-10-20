@@ -1,5 +1,5 @@
 ---
-published:false
+published: false
 ---
 <!doctype html>
 <html lang="en">
@@ -113,7 +113,7 @@ published:false
     <div>
       <div class="kicker">Clarity. Compliance. Confidence.</div>
       <h1 class="headline">Simplifying Cybersecurity<br/>Ensuring Compliance</h1>
-      <p class="sub">XyberIQ simplifies employee cybersecurity compliance training for mid-market companies. Join our free Startup Beta or grab the compliance-by-industry whitepaper to get ahead.</p>
+      <p class="sub">XyberIQ simplifies employee cybersecurity compliance training for mid-market companies. Join our free Startup Beta or grab the compliance-by-industry whitepaper to get ahead.[...]</p>
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="#get-started">Join Free Beta</a>
         <a class="btn" style="background:linear-gradient(90deg,var(--aqua), var(--primary))" href="#get-started">Get Whitepaper</a>
@@ -263,4 +263,3 @@ published:false
   </script>
 </body>
 </html>
-
