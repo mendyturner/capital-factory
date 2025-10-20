@@ -147,9 +147,16 @@
         <p class="muted">Choose the Free Startup Beta or the Compliance-by-Industry Whitepaper.</p>
         <form id="lead-form" novalidate>
           <div class="pillset" role="group" aria-label="Offer">
-            <label class="pill active"><input type="radio" name="offer" value="Free Startup Beta" checked/>Free Startup Beta</label>
-            <label class="pill active"><input type="radio" name="offer" value="Compliance Whitepaper" checked/>Compliance Whitepaper</label>
-          </div>
+  <label class="pill active">
+    <input type="radio" name="offer" value="Free Startup Beta" checked />
+    Free Startup Beta
+  </label>
+  <label class="pill">
+    <input type="radio" name="offer" value="Compliance Whitepaper" />
+    Compliance Whitepaper
+  </label>
+</div>
+
 
           <div>
             <label for="firstname">First Name</label>
@@ -157,7 +164,7 @@
           </div>
           <div>
             <label for="lastname">Last Name</label>
-            <input id="lastname" lastname="lastname" autocomplete="lastname" required/>
+            <input id="lastname" name="lastname" autocomplete="family-name" required />
           </div>
           <div>
             <label for="email">Work Email</label>
@@ -212,56 +219,73 @@
   </footer>
 
   <script>
-    // Toggle pill styles
-    document.querySelectorAll('.pill').forEach(p => {
-      p.addEventListener('click', () => {
-        document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
-        p.classList.add('active');
-        p.querySelector('input').checked = true;
+  // Toggle pill styles
+  document.querySelectorAll('.pill').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      const input = p.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ✅ FIX 1: Correct your exact Make webhook URL (no double https://)
+  // Example shape: https://hook.us2.make.com/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  const webhookURL = 'https://hook.us2.make.com/REPLACE_WITH_YOUR_REAL_HOOK';
+
+  const form = document.getElementById('lead-form');
+  const msg  = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.textContent = 'Submitting…';
+
+    const data = {
+      offer: document.querySelector('input[name="offer"]:checked')?.value || '',
+      firstname: document.getElementById('firstname').value.trim(),
+      lastname: document.getElementById('lastname').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      company: document.getElementById('company').value.trim(),
+      industry: document.getElementById('industry').value,
+      notes: document.getElementById('notes').value.trim(),
+      consent: document.getElementById('consent').checked ? 'yes' : 'no',
+      source: 'XyberIQ Landing',
+      timestamp: new Date().toISOString()
+    };
+
+    if (!data.email || !data.firstname || !data.lastname || data.consent !== 'yes'){
+      msg.textContent = 'Please complete required fields and consent.';
+      return;
+    }
+
+    try {
+      // ✅ FIX 2: Send URL-encoded (no CORS preflight), no custom headers, no no-cors.
+      const body = new URLSearchParams(data);
+
+      const res = await fetch(webhookURL, {
+        method: 'POST',
+        body // Content-Type auto: application/x-www-form-urlencoded
       });
-    });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const webhookURL = 'https://https://hook.us2.make.com/i8skkg44ybq6vptrr1bblxuks1j63vti'; 
-
-    document.getElementById('lead-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const msg = document.getElementById('form-msg');
-      msg.textContent = 'Submitting…';
-
-      const data = {
-        offer: document.querySelector('input[name="offer"]:checked')?.value || '',
-        firstname: document.getElementById('firstname').value.trim(),
-        lastname: document.getElementById('lastname').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        company: document.getElementById('company').value.trim(),
-        industry: document.getElementById('industry').value,
-        notes: document.getElementById('notes').value.trim(),
-        consent: document.getElementById('consent').checked,
-        source: 'XyberIQ Landing',
-        timestamp: new Date().toISOString()
-      };
-
-      if (!data.email || !data.firstname || !data.lastname || !data.consent){
-        msg.textContent = 'Please complete required fields and consent.';
-        return;
+      // Even if the webhook returns no JSON, we can still give a friendly success message.
+      // If you want to branch locally (e.g., auto-download on "Compliance"), do it here:
+      if (data.offer.includes('Compliance')) {
+        msg.innerHTML = 'Thanks! Your request was received. <a href="https://xyberiq.io/docs/compliance-by-industry.pdf" target="_blank" rel="noopener">Download the PDF</a>.';
+      } else {
+        msg.textContent = 'Thanks! You’re on the beta list. We’ll email onboarding shortly.';
       }
 
-      try{
-        const res = await fetch(webhookURL, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(data),
-          mode: 'no-cors' // allows success UI even when webhook doesn’t return CORS headers
-        });
-        
-      }catch(err){
-        console.error(err);
-        msg.textContent = 'Something went sideways. Try again or email hello@xyberiq.io.';
-      }
-    });
-  </script>
-</body>
-</html>
+      form.reset();
+      // Re-apply default selection to the first pill
+      const firstPill = document.querySelector('.pillset .pill');
+      document.querySelectorAll('.pillset .pill').forEach(x => x.classList.remove('active'));
+      if (firstPill) firstPill.classList.add('active');
 
+    } catch (err) {
+      console.error(err);
+      msg.textContent = 'Something went sideways. Try again or email hello@xyberiq.io.';
+    }
+  });
+</script>
