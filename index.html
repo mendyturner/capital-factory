@@ -2,30 +2,262 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capital Factory Tech Week 2025</title>
-  <meta name="description" content="Capital Factory Tech Week 2025 — schedule and resources." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XyberIQ — Simplify Cybersecurity. Ensure Compliance.</title>
+  <meta name="description" content="Free Beta for startups or a free compliance-by-industry whitepaper. XyberIQ simplifies employee cybersecurity compliance training for mid-market companies." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; max-width: 720px; margin: 4rem auto; padding: 0 1rem; color: #0f172a; }
-    header { text-align: center; margin-bottom: 2rem; }
-    a.button { display:inline-block; padding: .5rem 1rem; background:#0066ff; color:white; border-radius:6px; text-decoration:none; }
-    footer { margin-top:3rem; font-size:.9rem; color:#475569; }
+    :root{
+      --primary:#0072FF;      /* Primary Blue */
+      --aqua:#00E0FF;         /* Accent Aqua */
+      --white:#FFFFFF;        /* Neutral White */
+      --gray:#2B2B2B;         /* Support Gray */
+      --black:#000000;        /* Background Black */
+      --glow: 0 10px 40px rgba(0, 114, 255, .35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:#000000;
+      color:var(--white);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .nav{
+      max-width:1100px;margin:0 auto;padding:20px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{
+      display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--white);
+    }
+    .brand .logotype{font-family:Poppins, sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:.2px}
+    .brand .iq{color:var(--aqua)}
+    .btn{
+      background:linear-gradient(90deg, var(--primary), var(--aqua));
+      color:#001019;border:0;border-radius:999px;padding:12px 18px;font-weight:600;
+      text-decoration:none;display:inline-block;box-shadow:var(--glow);
+      transition:transform .15s ease, filter .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .hero{
+      max-width:1100px;margin:10px auto 0;padding:24px 20px 0;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;
+    }
+    @media (max-width:960px){ .hero{grid-template-columns:1fr} }
+    .headline{
+      font-family:Poppins, sans-serif;
+      font-size:clamp(36px, 5.5vw, 64px);
+      font-weight:800;letter-spacing:.2px;line-height:1.05;margin:10px 0 18px;
+    }
+    .sub{color:#C9D3DF;max-width:620px;font-size:1.05rem}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:22px;box-shadow:0 8px 40px rgba(0,0,0,.55);
+      backdrop-filter:blur(8px)
+    }
+    .grid{
+      max-width:1100px;margin:28px auto;padding:0 20px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    }
+    @media (max-width:960px){ .grid{grid-template-columns:1fr} }
+    .feature h3{margin:8px 0 6px;font-weight:700}
+    .muted{color:#9FB0BE}
+    .cta{
+      max-width:1100px;margin:26px auto 80px;padding:0 20px;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:26px
+    }
+    @media (max-width:960px){ .cta{grid-template-columns:1fr} }
+    form{
+      display:grid;gap:12px
+    }
+    label{font-size:.95rem;margin-bottom:2px}
+    input, select, textarea{
+      background:#0b0f14;border:1px solid #1b2430;color:var(--white);
+      padding:12px;border-radius:12px;font-size:1rem;outline:none;
+    }
+    input:focus, select:focus, textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,114,255,.25)}
+    .pillset{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      border:1px solid #1b2430;background:#0b0f14;color:#dbe7ff;padding:10px 14px;border-radius:999px;cursor:pointer;
+    }
+    .pill input{display:none}
+    .pill.active{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,114,255,.25)}
+    .notice{
+      font-size:.9rem;color:#98a7b6
+    }
+    .footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:28px 20px;margin-top:48px;color:#9FB0BE;text-align:center
+    }
+    .kicker{color:var(--aqua);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.85rem}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Capital Factory Tech Week 2025</h1>
-    <p>Welcome — this is a placeholder landing page. Replace with your site content.</p>
-    <p><a class="button" href="https://github.com/mendyturner/capital-factory-tech-week-2025">View source on GitHub</a></p>
+
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="logotype">Xyber<span class="iq">IQ</span></span>
+    </a>
+    <a class="btn" href="#get-started">Get Started</a>
   </header>
-  <main>
-    <section>
-      <h2>Schedule & Resources</h2>
-      <p>Add pages for sessions, speakers, and resources in this repository.</p>
-    </section>
-  </main>
-  <footer>
-    <p>Hosted on GitHub Pages · <time datetime="2025-10-20">2025</time></p>
+
+  <section class="hero">
+    <div>
+      <div class="kicker">Clarity. Compliance. Confidence.</div>
+      <h1 class="headline">Simplifying Cybersecurity<br/>Ensuring Compliance</h1>
+      <p class="sub">XyberIQ simplifies employee cybersecurity compliance training for mid-market companies. Join our free Startup Beta or grab the compliance-by-industry whitepaper to get ahead.</p>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="#get-started">Join Free Beta</a>
+        <a class="btn" style="background:linear-gradient(90deg,var(--aqua), var(--primary))" href="#get-started">Get Whitepaper</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="feature">
+        <h3>What you’ll get</h3>
+        <p class="muted">• Streamlined training modules • Automated tracking • Regulatory adherence templates • Early-access roadmap</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card feature">
+      <h3>Streamlined Training</h3>
+      <p class="muted">Engaging, easy-to-understand modules for staff and contractors.</p>
+    </div>
+    <div class="card feature">
+      <h3>Automated Tracking</h3>
+      <p class="muted">Monitor completions and export reports in real time.</p>
+    </div>
+    <div class="card feature">
+      <h3>Regulatory Adherence</h3>
+      <p class="muted">Stay aligned to CMMC, HIPAA, PCI, SOC 2, ISO/IEC 27001, and more.</p>
+    </div>
+  </section>
+
+  <section id="get-started" class="cta">
+    <div>
+      <div class="card">
+        <h2 style="font-family:Poppins, sans-serif;margin:0 0 10px">Take Control of Your Compliance</h2>
+        <p class="muted">Choose the Free Startup Beta or the Compliance-by-Industry Whitepaper.</p>
+        <form id="lead-form" novalidate>
+          <div class="pillset" role="group" aria-label="Offer">
+            <label class="pill active"><input type="radio" name="offer" value="Free Startup Beta" checked/>Free Startup Beta</label>
+            <label class="pill"><input type="radio" name="offer" value="Compliance Whitepaper"/>Compliance Whitepaper</label>
+          </div>
+
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" autocomplete="name" required/>
+          </div>
+          <div>
+            <label for="email">Work Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required/>
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" autocomplete="organization"/>
+          </div>
+          <div>
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry">
+              <option>Technology / SaaS</option>
+              <option>Healthcare</option>
+              <option>Financial Services</option>
+              <option>Retail / eCommerce</option>
+              <option>Manufacturing</option>
+              <option>Energy / Oil & Gas</option>
+              <option>Public Sector</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="notes">What’s your biggest compliance headache?</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="e.g., SOC 2 audits, HIPAA training, vendor risk"></textarea>
+          </div>
+
+          <label class="notice" style="display:flex;gap:.6rem;align-items:flex-start;margin-top:4px">
+            <input type="checkbox" id="consent" required />
+            I agree to receive information related to the selected offer and understand I can unsubscribe at any time.
+          </label>
+
+          <button class="btn" style="width:fit-content;margin-top:6px" type="submit">Submit</button>
+          <div id="form-msg" class="notice" role="status" aria-live="polite" style="margin-top:8px;"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Why startups love the Beta</h3>
+      <ul class="muted">
+        <li>Hands-on help setting up policies and training flows</li>
+        <li>Templates that map to your industry standards</li>
+        <li>Direct line to our product team</li>
+        <li>Preferential pricing when we launch</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> XyberIQ — Clarity. Compliance. Confidence.
   </footer>
+
+  <script>
+    // Toggle pill styles
+    document.querySelectorAll('.pill').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        p.querySelector('input').checked = true;
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const webhookURL = 'https://hook.us2.make.com/yexowj2rinh5uw7nmx3u5p8s3wgljmjy'; // <— Step 4 will replace this
+
+    document.getElementById('lead-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('form-msg');
+      msg.textContent = 'Submitting…';
+
+      const data = {
+        offer: document.querySelector('input[name="offer"]:checked')?.value || '',
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        industry: document.getElementById('industry').value,
+        notes: document.getElementById('notes').value.trim(),
+        consent: document.getElementById('consent').checked,
+        source: 'XyberIQ Landing',
+        timestamp: new Date().toISOString()
+      };
+
+      if (!data.email || !data.name || !data.consent){
+        msg.textContent = 'Please complete required fields and consent.';
+        return;
+      }
+
+      try{
+        const res = await fetch(webhookURL, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data),
+          mode: 'no-cors' // allows success UI even when webhook doesn’t return CORS headers
+        });
+        msg.textContent = 'Thanks! Check your email shortly.';
+        (e.target as HTMLFormElement).reset?.();
+      }catch(err){
+        console.error(err);
+        msg.textContent = 'Something went sideways. Try again or email hello@xyberiq.io.';
+      }
+    });
+  </script>
 </body>
 </html>
+
