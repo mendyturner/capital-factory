@@ -255,8 +255,8 @@
           body: JSON.stringify(data),
           mode: 'no-cors' // allows success UI even when webhook doesn’t return CORS headers
         });
-        msg.textContent = 'Thanks! Check your email shortly.';
-        (e.target as HTMLFormElement).reset?.();
+        const firstName = data.name.split(' ')[0] || '';
+        window.location = `/thanks.html?offer=${encodeURIComponent(data.offer)}&firstname=${encodeURIComponent(firstName)}`;
       }catch(err){
         console.error(err);
         msg.textContent = 'Something went sideways. Try again or email hello@xyberiq.io.';
