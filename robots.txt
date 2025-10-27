@@ -1,0 +1,15 @@
+# robots.txt for XyberIQ Beta / Tech Week 2025
+User-agent: *
+# Allow the main content
+Allow: /
+
+# Disallow internal or non-production paths (future-proof)
+Disallow: /assets/
+Disallow: /drafts/
+Disallow: /test/
+Disallow: /private/
+Disallow: /forms/
+Disallow: /api/
+
+# Let search engines know where the sitemap lives
+Sitemap: https://beta.xyberiq.io/sitemap.xml
