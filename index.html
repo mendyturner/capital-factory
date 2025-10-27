@@ -272,7 +272,7 @@
       // Even if the webhook returns no JSON, we can still give a friendly success message.
       // If you want to branch locally (e.g., auto-download on "Compliance"), do it here:
       if (data.offer.includes('Compliance')) {
-        msg.innerHTML = 'Thanks! Your request was received. <a href="https://xyberiq.io/docs/compliance-by-industry.pdf" target="_blank" rel="noopener">Download the PDF</a>.';
+        msg.innerHTML = 'Thanks! Your request was received. <a href="https://xyberiq.io/assets/compliance-by-industry.pdf" target="_blank" rel="noopener">Download the PDF</a>.';
       } else {
         msg.textContent = 'Thanks! You’re on the beta list. We’ll email onboarding shortly.';
       }
