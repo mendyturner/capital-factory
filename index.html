@@ -95,6 +95,9 @@
       padding:28px 20px;margin-top:48px;color:#9FB0BE;text-align:center
     }
     .kicker{color:var(--aqua);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.85rem}
+    /* small link style for hero */
+    .hero-link{color:var(--aqua);font-weight:600;text-decoration:none;align-self:center}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   </style>
 </head>
 <body>
@@ -111,9 +114,12 @@
       <div class="kicker">Clarity. Compliance. Confidence.</div>
       <h1 class="headline">Simplifying Cybersecurity<br/>Ensuring Compliance</h1>
       <p class="sub">XyberIQ simplifies employee cybersecurity compliance training for mid-market companies. Join our free Startup Beta or grab the compliance-by-industry whitepaper to get ahead.</p>
-      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap" class="hero-actions">
         <a class="btn" href="#get-started">Join Free Beta</a>
         <a class="btn" style="background:linear-gradient(90deg,var(--aqua), var(--primary))" href="#get-started">Get Whitepaper</a>
+
+        <!-- INSERTED LINK: visible next to the buttons -->
+        <a class="hero-link" href="/assets/compliance-by-industry.html">Compliance by Industry</a>
       </div>
     </div>
 
@@ -270,9 +276,9 @@
       });
 
       // Even if the webhook returns no JSON, we can still give a friendly success message.
-      // If you want to branch locally (e.g., auto-download on "Compliance"), do it here:
+      // Updated to link to the HTML page under /assets/ rather than the PDF
       if (data.offer.includes('Compliance')) {
-        msg.innerHTML = 'Thanks! Your request was received. <a href="https://xyberiq.io/assets/compliance-by-industry.pdf" target="_blank" rel="noopener">Download the PDF</a>.';
+        msg.innerHTML = 'Thanks! Your request was received. <a href="/assets/compliance-by-industry.html" target="_blank" rel="noopener">Open the Compliance by Industry page</a>.';
       } else {
         msg.textContent = 'Thanks! You’re on the beta list. We’ll email onboarding shortly.';
       }
@@ -289,3 +295,6 @@
     }
   });
 </script>
+
+</body>
+</html>
