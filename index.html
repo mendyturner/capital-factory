@@ -279,6 +279,8 @@
       // Updated to link to the HTML page under /assets/ rather than the PDF
       if (data.offer.includes('Compliance')) {
         msg.innerHTML = 'Thanks! Your request was received. <a href="/assets/compliance-by-industry.html" target="_blank" rel="noopener">Open the Compliance by Industry page</a>.';
+      <link rel="stylesheet" href="print.css" media="print">;
+
       } else {
         msg.textContent = 'Thanks! You’re on the beta list. We’ll email onboarding shortly.';
       }
