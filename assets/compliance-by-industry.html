@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XyberIQ • Compliance by Industry</title>
+  <meta name="description" content="Pick your industry or framework to start a quick readiness check and get a printable gap report." />
+  <style>
+    :root{--electric:#0072FF;--aqua:#00E0FF;--ink:#0B1221;--muted:#6b7280;--panel:#0f1629;--card:#121a2f;--line:#1f2a44}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0b1221;color:#e8eefc}
+    .wrap{max-width:1100px;margin:42px auto;padding:0 20px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .mark{width:48px;height:48px;border-radius:14px;background:conic-gradient(from 180deg at 50% 50%, var(--electric), var(--aqua), var(--electric));box-shadow:0 8px 24px rgba(0,114,255,.35)}
+    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .sub{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:16px}
+    @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+    .tag{display:inline-block;font-size:12px;font-weight:700;color:#9fb6ff;border:1px solid #284287;border-radius:999px;padding:4px 10px}
+    .title{font-weight:800;font-size:18px}
+    .desc{color:#b7c3e0;font-size:14px;min-height:42px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+    a.btn{background:linear-gradient(90deg,var(--electric),var(--aqua));color:#0b1221;text-decoration:none;font-weight:800;border-radius:12px;padding:10px 12px;border:0}
+    a.link{color:#97c9ff;text-decoration:none;border-bottom:1px dashed #2b5fb8}
+    footer{margin-top:24px;color:#7f8caf;font-size:12px;text-align:center}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#1f2a44,transparent);margin:20px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Compliance by Industry</h1>
+          <div class="sub">Pick a framework to run a 3-minute readiness check and get a printable gap report.</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Healthcare / HIPAA -->
+      <div class="card">
+        <span class="tag">Healthcare</span>
+        <div class="title">HIPAA Privacy & Security</div>
+        <div class="desc">12 quick questions across administrative, technical, and physical safeguards. Generates a branded, printable gap report.</div>
+        <div class="actions">
+          <!-- Adjust these relative paths if your repo structure differs -->
+          <a class="btn" href="/assessment_hipaa/index.html">Start HIPAA Assessment</a>
+          <a class="link" href="/reports_hipaa/hipaa_gap_report_xyberiq.html">Preview HIPAA Report</a>
+        </div>
+      </div>
+
+      <!-- DoD Subcontractors / CMMC -->
+      <div class="card">
+        <span class="tag">Defense</span>
+        <div class="title">CMMC (NIST 800-171)</div>
+        <div class="desc">Score yourself on 12 core domains (MFA, logging, IR, vendor oversight) and see your Level 2 trajectory + timeline.</div>
+        <div class="actions">
+          <a class="btn" href="/assessment/index.html">Start CMMC Assessment</a>
+          <a class="link" href="/reports/cmmc_gap_report_xyberiq.html">Preview CMMC Report</a>
+        </div>
+      </div>
+
+      <!-- PCI-DSS (placeholder) -->
+      <div class="card">
+        <span class="tag">Retail & Ecommerce</span>
+        <div class="title">PCI-DSS (Coming Soon)</div>
+        <div class="desc">Cardholder data controls, segmentation, logging, and ROC/SAQ readiness. Add this tile once the module is ready.</div>
+        <div class="actions">
+          <a class="btn" href="#" onclick="alert('PCI-DSS module is in development.');return false;">Notify Me</a>
+        </div>
+      </div>
+
+      <!-- SOC 2 (placeholder) -->
+      <div class="card">
+        <span class="tag">SaaS & Cloud</span>
+        <div class="title">SOC 2 Type I/II (Coming Soon)</div>
+        <div class="desc">Trust Services Criteria with evidence mapping, policies, and audit prep workflows.</div>
+        <div class="actions">
+          <a class="btn" href="#" onclick="alert('SOC 2 module is in development.');return false;">Notify Me</a>
+        </div>
+      </div>
+
+      <!-- SOX (placeholder) -->
+      <div class="card">
+        <span class="tag">Finance</span>
+        <div class="title">SOX ITGC (Coming Soon)</div>
+        <div class="desc">Access, change, computer ops, and reporting controls aligned to auditor expectations.</div>
+        <div class="actions">
+          <a class="btn" href="#" onclick="alert('SOX module is in development.');return false;">Notify Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <footer>© <script>document.write(new Date().getFullYear())</script> XyberIQ • Frictionless Compliance Readiness</footer>
+  </div>
+</body>
+</html>
