@@ -1,44 +1,40 @@
 :root{
-  /* Tweak these two numbers to taste */
-  --logo-h-desktop: 48px;   /* common navbar height */
-  --logo-h-mobile:  36px;
-  --header-pad-y:    8px;   /* top/bottom padding */
-  --header-pad-x:   20px;   /* left/right padding */
+  --primary:#0072FF;
+  --aqua:#00E0FF;
+  --white:#FFFFFF;
+  --black:#000000;   /* matches your site background */
 }
 
-/* Header layout */
+/* Compact header */
 .site-header{
-  display:flex; align-items:center; justify-content:space-between;
-  padding: var(--header-pad-y) var(--header-pad-x);
-  background-color: var(--ink); color:#fff;
-  /* optional: enforce a tidy band */
-  min-height: calc(var(--logo-h-desktop) + 2*var(--header-pad-y));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:6px 20px;           /* thinner top/bottom padding */
+  background-color:var(--black); /* same as site background */
+  color:var(--white);
+  border-bottom:1px solid rgba(255,255,255,.08); /* subtle divider line */
 }
 
-/* Brand block shouldn’t shrink the logo */
-.site-header .brand{
-  display:flex; align-items:center; gap:14px;
-  flex-shrink:0; min-width:0;
+/* Keep brand area tight */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
 }
 
-/* ✅ Permanent logo sizing by HEIGHT (prevents tall headers) */
-.site-header .brand .logo{
-  height: var(--logo-h-desktop);
-  width: auto;             /* keep aspect ratio */
-  max-height: none;        /* defeat any global caps */
+/* Logo sized by height for consistent navbar height */
+.logo{
+  height:42px;      /* try 38–46 for your taste */
+  width:auto;
+  max-height:none;
   display:block;
 }
 
-/* Mobile tweaks */
-@media (max-width: 768px){
-  .site-header{
-    flex-wrap:wrap; gap:10px;
-    min-height: calc(var(--logo-h-mobile) + 2*var(--header-pad-y));
-  }
-  .site-header .brand .logo{ height: var(--logo-h-mobile); }
-}
-
-/* If some theme sets a generic cap like .site-header img {max-height:40px} */
-.site-header .brand a.logo-link > img.logo{
-  max-height: none; /* higher specificity, no !important needed */
+/* Optional: hide tagline on small screens */
+@media (max-width:768px){
+  .site-header{flex-wrap:wrap;gap:8px}
+  .logo{height:36px;}
+  .site-title{display:none;}
 }
