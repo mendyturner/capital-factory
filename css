@@ -21,9 +21,9 @@
   gap: 14px;
 }
 .logo {
-  width: 300px;
+  width: 280px;      /* increase width */
   height: auto;
-  max-height: 100px;
+  max-height: 80px;  /* increase max-height */
 }
 
 .site-title {
