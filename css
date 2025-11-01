@@ -20,11 +20,10 @@
   align-items: center;
   gap: 14px;
 }
-
 .logo {
-  width: 200px;     /* desktop size */
+  width: 300px;
   height: auto;
-  max-height: 60px;
+  max-height: 100px;
 }
 
 .site-title {
