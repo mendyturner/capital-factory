@@ -1,74 +1,44 @@
-:root {
-  --electric: #0072FF;
-  --aqua: #00E0FF;
-  --ink: #0B1221;
-  --muted: #6b7280;
-  --bg: #000; /* dark mode background */
+:root{
+  /* Tweak these two numbers to taste */
+  --logo-h-desktop: 48px;   /* common navbar height */
+  --logo-h-mobile:  36px;
+  --header-pad-y:    8px;   /* top/bottom padding */
+  --header-pad-x:   20px;   /* left/right padding */
 }
 
-.site-header img.logo{
-  width:280px !important;
-  height:auto !important;
-  max-height:none !important;
+/* Header layout */
+.site-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: var(--header-pad-y) var(--header-pad-x);
+  background-color: var(--ink); color:#fff;
+  /* optional: enforce a tidy band */
+  min-height: calc(var(--logo-h-desktop) + 2*var(--header-pad-y));
 }
 
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.logo {
-  width: 280px !important;
-  height: auto !important;
-  max-height: none !important;
-  display: block;
+/* Brand block shouldn’t shrink the logo */
+.site-header .brand{
+  display:flex; align-items:center; gap:14px;
+  flex-shrink:0; min-width:0;
 }
 
-
-.site-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--aqua);
+/* ✅ Permanent logo sizing by HEIGHT (prevents tall headers) */
+.site-header .brand .logo{
+  height: var(--logo-h-desktop);
+  width: auto;             /* keep aspect ratio */
+  max-height: none;        /* defeat any global caps */
+  display:block;
 }
 
-.main-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.main-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.main-nav a:hover {
-  color: var(--aqua);
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, var(--electric), var(--aqua));
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  .logo {
-    width: 140px;  /* smaller on mobile */
-    max-height: 45px;
+/* Mobile tweaks */
+@media (max-width: 768px){
+  .site-header{
+    flex-wrap:wrap; gap:10px;
+    min-height: calc(var(--logo-h-mobile) + 2*var(--header-pad-y));
   }
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .main-nav {
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 8px;
-  }
+  .site-header .brand .logo{ height: var(--logo-h-mobile); }
+}
+
+/* If some theme sets a generic cap like .site-header img {max-height:40px} */
+.site-header .brand a.logo-link > img.logo{
+  max-height: none; /* higher specificity, no !important needed */
 }
