@@ -11,7 +11,7 @@
   align-items:center;
   justify-content:space-between;
   padding:4px 20px;           /* thinner top/bottom padding */
-  background-color:var(--black); /* same as site background */
+  background-color:var(--ink); /* same as site background */
   color:var(--white);
   border-bottom:1px solid rgba(255,255,255,.08); /* subtle divider line */
 }
