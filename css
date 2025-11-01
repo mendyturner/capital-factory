@@ -6,14 +6,12 @@
   --bg: #000; /* dark mode background */
 }
 
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 24px;
-  background-color: var(--ink);
-  color: white;
+.site-header img.logo{
+  width:280px !important;
+  height:auto !important;
+  max-height:none !important;
 }
+
 
 .brand {
   display: flex;
