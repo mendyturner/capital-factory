@@ -21,10 +21,12 @@
   gap: 14px;
 }
 .logo {
-  width: 280px;      /* increase width */
-  height: auto;
-  max-height: 80px;  /* increase max-height */
+  width: 280px !important;
+  height: auto !important;
+  max-height: none !important;
+  display: block;
 }
+
 
 .site-title {
   font-size: 16px;
